@@ -17,7 +17,7 @@ az_earth = accelerations_LL(4,:);
 %close all
 ay_earth = -ay_earth;
 
-figure 
+figure
 hold on;
 q = plot (t, [ax_earth(1:length(t));ay_earth(1:length(t));az_earth(1:length(t))]);
 set(legend(q,'$a_x$ (Earth)', '$a_y$ (Earth)', '$a_z$ (Earth)'),'interpreter','latex','fontsize',20)
@@ -33,7 +33,7 @@ fmax = 0.5/(t(10)-t(9));
 %[h ts] = impz(c,d,length(t));figure();hold on;plot(f_s,abs(fftshift(fft(h))));xlim([0,0.5])
 
 
-% calculate velocities and remove drifts 
+% calculate velocities and remove drifts
 %close all
 
 %{
@@ -180,7 +180,7 @@ for i = 1:length(moving_x_end)
     %drift = [enum'*driftRate(1) enum'*driftRate(2) enum'*driftRate(3)].*(t(enum)');
     drift = (t(enum')-t(enum(1)))*driftRate;% ; (t(enum')-t(enum(1)))*driftRate(2); (t(enum')-t(enum(1)))*driftRate(3)]';
     velDrift(enum, 1) = drift;
-    
+
 end
 %%%%% Part b for vy
 for i = 1:length(moving_y_end)
@@ -192,7 +192,7 @@ for i = 1:length(moving_y_end)
     %drift = [enum'*driftRate(1) enum'*driftRate(2) enum'*driftRate(3)].*(t(enum)');
     drift = (t(enum')-t(enum(1)))*driftRate ; %(t(enum')-t(enum(1)))*driftRate(2); (t(enum')-t(enum(1)))*driftRate(3)]';
     velDrift(enum, 2) = drift;
-    
+
 end
 %%%%% Part b for vz
 for i = 1:length(moving_z_end)-1
@@ -204,7 +204,7 @@ for i = 1:length(moving_z_end)-1
     %drift = [enum'*driftRate(1) enum'*driftRate(2) enum'*driftRate(3)].*(t(enum)');
     drift = (t(enum')-t(enum(1)))*driftRate ;%; (t(enum')-t(enum(1)))*driftRate(2); (t(enum')-t(enum(1)))*driftRate(3)]';
     velDrift(enum, 3) = drift;
-    
+
 end
 %{
 figure(500)
@@ -224,7 +224,7 @@ plot(t,vel(:,1));
 legend({ '$v_x$ before','$v_x$ after '},'interpreter','latex','fontsize',20,'location','best')
 ylabel('Velocity, $v_x$ (Earth)','interpreter','latex','fontsize',20)
 xlabel('Time $t$(s)','interpreter','latex','fontsize',20)
-set(gca,'fontsize',20) 
+set(gca,'fontsize',20)
 grid on;
 box on
 
@@ -236,7 +236,7 @@ legend({ '$v_y$ before','$v_y$ after '},'interpreter','latex','fontsize',20,'loc
 ylabel('Velocity, $v_y$ (Earth)','interpreter','latex','fontsize',20)
 xlabel('Time $t$(s)','interpreter','latex','fontsize',20)
 
-set(gca,'fontsize',20) 
+set(gca,'fontsize',20)
 grid on;
 box on
 
@@ -248,7 +248,7 @@ legend({ '$v_z$ before','$v_z$ after '},'interpreter','latex','fontsize',20,'loc
 ylabel('Velocity, $v_z$ (Earth)','interpreter','latex','fontsize',20)
 xlabel('Time $t$(s)','interpreter','latex','fontsize',20)
 
-set(gca,'fontsize',20) 
+set(gca,'fontsize',20)
 grid on;
 box on
 vx = vel(:,1);
@@ -373,7 +373,7 @@ end
 for i = 1:length(moving_z_end)
     pos(moving_z_start(i)+1:moving_z_end(i)-1,3) = pos(moving_z_start(i)+1:moving_z_end(i)-1,3)-pos(moving_z_start(i)+1,3);%detrend(vel(moving_start(i):moving_end(i),3));
 end
-% 
+%
 figure()
 hold on
 plot(pos)
@@ -402,7 +402,7 @@ for i = 1:length(moving_x_end)
     %enum = enum+1;
     %drift = [enum'*driftRate(1) enum'*driftRate(2) enum'*driftRate(3)].*(t(enum)');
     drift = (t(enum')-t(enum(1)))*driftRate ; %(t(enum')-t(enum(1)))*driftRate(2); (t(enum')-t(enum(1)))*driftRate(3)]';
-    posDrift(enum, 1) = drift;  
+    posDrift(enum, 1) = drift;
 end
 for i = 1:length(moving_y_end)
     driftRate = pos(moving_y_end(i)-1, 2) / (t(moving_y_end(i)) - t((moving_y_start(i))));
@@ -412,13 +412,13 @@ for i = 1:length(moving_y_end)
     %enum = enum+1;
     %drift = [enum'*driftRate(1) enum'*driftRate(2) enum'*driftRate(3)].*(t(enum)');
     drift = (t(enum')-t(enum(1)))*driftRate ; %(t(enum')-t(enum(1)))*driftRate(2); (t(enum')-t(enum(1)))*driftRate(3)]';
-    posDrift(enum, 2) = drift;  
+    posDrift(enum, 2) = drift;
 end
 
 
 
 for i = 1:length(moving_z_end)
-    
+
     driftRate = pos(moving_z_end(i)-1, 3) / (t(moving_z_end(i)) - t((moving_z_start(i))));
     % driftRate
     enum = moving_z_start(i):moving_z_end(i);%1:(moving_end(i)-1 - (moving_start(i) ));
@@ -426,7 +426,7 @@ for i = 1:length(moving_z_end)
     %enum = enum+1;
     %drift = [enum'*driftRate(1) enum'*driftRate(2) enum'*driftRate(3)].*(t(enum)');
     drift = (t(enum')-t(enum(1)))*driftRate ; %(t(enum')-t(enum(1)))*driftRate(2); (t(enum')-t(enum(1)))*driftRate(3)]';
-    posDrift(enum, 3) = drift;  
+    posDrift(enum, 3) = drift;
 end
 %
 
@@ -445,7 +445,7 @@ legend({ '$x$ before','$x$ after '},'interpreter','latex','fontsize',20,'locatio
 ylabel('$x$ (m)(Earth)','interpreter','latex','fontsize',20)
 xlabel('Time $t$(s)','interpreter','latex','fontsize',20)
 
-set(gca,'fontsize',20) 
+set(gca,'fontsize',20)
 grid on;
 box on
 
@@ -459,7 +459,7 @@ legend({ '$y$ before','$y$ after '},'interpreter','latex','fontsize',20,'locatio
 ylabel('$y$ (m)(Earth)','interpreter','latex','fontsize',20)
 xlabel('Time $t$(s)','interpreter','latex','fontsize',20)
 
-set(gca,'fontsize',20) 
+set(gca,'fontsize',20)
 grid on;
 box on
 
@@ -472,7 +472,7 @@ legend({ '$z$ before','$z$ after '},'interpreter','latex','fontsize',20,'locatio
 ylabel('$z$ (m)(Earth)','interpreter','latex','fontsize',20)
 xlabel('Time $t$(s)','interpreter','latex','fontsize',20)
 
-set(gca,'fontsize',20) 
+set(gca,'fontsize',20)
 grid on;
 box on
 x = pos(:,1);
@@ -507,4 +507,6 @@ xlim([start_idx end_idx])
 pos = [x , y , z];
 %save('C:\Users\ahmedag\OneDrive - Universitetet i Agder\CSI-Data Proceseeing\Paper 5\Sensor Data\Pendulum2_pos','t','x','y','z','pos','peaks_idxs','zero_acc_idxs')
 %}
+%{
   save([dr 'vel_pos.mat'],'t','ax_earth','ay_earth','az_earth','vel','pos','start_idx','end_idx')
+%}
