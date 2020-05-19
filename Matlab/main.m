@@ -72,3 +72,23 @@ ax_earth = ax_earth - ax_earth(1);
 ay_earth = ay_earth - ay_earth(1);
 az_earth = az_earth - az_earth(1);
 %}
+
+figure
+hold on;
+title('Earth Aceelerations','Fontsize',16,'interpreter','Latex')
+q = plot (t, [ax_earth; ay_earth; az_earth]);
+set(legend(q,'$a_x$ (Earth)', '$a_y$ (Earth)', '$a_z$ (Earth)'),'interpreter','latex','fontsize',20)
+grid on;set(gca,'fontsize',16) ;box on
+
+%% normalize accelerations
+
+[ax_earth, ay_earth, az_earth] = normAccEarth(ax_earth, ay_earth, az_earth);
+figure
+hold on;
+title('Earth aceelerations after normalization','Fontsize',16,'interpreter','Latex')
+q = plot (t, [ax_earth; ay_earth; az_earth]);
+set(legend(q,'$a_x$ (Earth)', '$a_y$ (Earth)', '$a_z$ (Earth)'),'interpreter','latex','fontsize',20)
+grid on;set(gca,'fontsize',16) ;box on
+
+
+%% Parsing time_stamp from strings to date time format
