@@ -8,7 +8,7 @@ function [time_stamp, ax, ay, az, b] = read_csv_files(dr,file_name)
     if( ~contains(file_name, '_Quaternion') )
         accelerations = textscan(fileID,'%s %s %s %s %s %s','Delimiter',',');
         g = 9.8;
-        time_stamp = cellfun(@str2num, accelerations{3}(2:end))';
+        time_stamp = accelerations{2}(2:end)';
         ax = cellfun(@str2num, accelerations{4}(2:end))'*g;
         ay = cellfun(@str2num, accelerations{5}(2:end))'*g;
         az = cellfun(@str2num, accelerations{6}(2:end))'*g;
