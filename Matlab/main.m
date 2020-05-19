@@ -5,12 +5,16 @@ clc
 
 [file_name, dr] = uigetfile({'*_LinearAcceleration.csv'});
 [time_stamp, ax, ay, az, ~] = read_csv_files(dr,file_name);
+dt = 1e-2;
+t = (0:length(ax)-1)*dt;
 
-% Smooth the accelerations and compare
+% Smooth the accelerations and compare by plotting
 ax_new = smoothdata(ax,'loess');
 ay_new = smoothdata(ay,'loess');
 az_new = smoothdata(az,'loess');
 
+%
+% plotting before and after denoising (optional)
 figure
 hold on; grid on;set(gca,'fontsize',16)
 plot(t,ax_new,'Linewidth',2);
@@ -40,25 +44,27 @@ xlabel('Time, $t(s)$','interpreter','latex','fontsize',20)
 legend({'$a_z$ after ', '$a_z$ before'},'interpreter','latex','fontsize',20,'location','best')
 box on
 
-%
+% overwriting the raw accelerations with the denoised ones (optional)
+
 ax = ax_new;
 ay = ay_new;
 az = az_new;
-
+%}
 
 %% Read the quaternions
 
+%global accelerations;
 [file_name1, dr] = uigetfile({'*_Quaternion.csv'});
 [~, w, x, y, z] = read_csv_files(dr,file_name1);
 
-
 %% Rotate the accelerations
 
-t = ax_earth;
+
 ax_earth = zeros(1,length(t));
 ay_earth = zeros(1,length(t));
 az_earth = zeros(1,length(t));
 det_rot = zeros(1,length(t));
+%t = ax_earth;
 for l = 1:length(t)
     %det_rot(l) = det(quat2rotm([w(l) x(l) y(l) z(l)]));
     acc_earth = quat2rotm([w(l) x(l) y(l) z(l)])'\[ax(l);ay(l);az(l)];
@@ -67,7 +73,7 @@ for l = 1:length(t)
     az_earth(l) = acc_earth(3);
 end
 % Calibrate the data (Optional)
-%{
+%
 ax_earth = ax_earth - ax_earth(1);
 ay_earth = ay_earth - ay_earth(1);
 az_earth = az_earth - az_earth(1);
