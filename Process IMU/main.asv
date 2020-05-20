@@ -3,8 +3,7 @@ clear
 clc
 read_and_Preprocess;
 %% crop the data and time stamps to your chosen subinterval
-%[start_time_stamp,~] = ginput;
-%start_time_stamp
+start_time_stamp = ginput()
 start_date = [toStringJSON(time_stamps(1).Year), '-', toStringJSON(time_stamps(1).Month), '-', toStringJSON(time_stamps(1).Day)];
 
 % This start_time is chosen by you in the last figure
