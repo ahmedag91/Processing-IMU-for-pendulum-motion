@@ -20,11 +20,6 @@ function [vel_vec] = ZUPT_vel_wrists_vec(accel_smoothed_vector,samplePeriod)
         end
     end
     velDrift = zeros(size(vel));
-    global stationaryStart;
-    global stationaryEnd;
-    global drift;
-    global enum;
-    global driftRate;
     stationaryStart = [1;indices(1:end-1)];%find([0; diff(stationary)] == 1);
     stationaryEnd = [indices(2:end);length(vel)];
     stationaryStart = [stationaryStart;stationaryEnd(end-1)];
