@@ -3,7 +3,7 @@
 %%%% component. This function can be used to get the velocity or
 %%%% displacement as outputs, for pendulum's motion
 %%%% accel_smoothed_vector should be in column form not row
-function [vel_vec] = ZUPT_vel_wrists_vec(accel_smoothed_vector,samplePeriod)
+function [vel_vec] = zuptPendulum(accel_smoothed_vector,samplePeriod)
     g = 9.8;
     vel_vec = accel_smoothed_vector;
     vel_vec(:) = 0;
