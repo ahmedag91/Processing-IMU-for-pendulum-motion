@@ -3,18 +3,18 @@
 [file_name, dr] = uigetfile({'*_LinearAcceleration.csv'});
 [time_stamps, ax, ay, az, ~] = read_csv_files(dr,file_name);
 
-% Parsing time_stamp from strings to date time format
+%% Parsing time_stamp from strings to date time format
 time_stamps = datetime(time_stamps,'Format','yyyy-MM-dd''T''HH.mm.ss.SSS');
 dt = 1e-2;
 t = (0:length(ax)-1)*dt;
 
-% Smooth the accelerations and compare by plotting
+%% Smooth the accelerations and compare by plotting
 ax_new = smoothdata(ax,'loess');
 ay_new = smoothdata(ay,'loess');
 az_new = smoothdata(az,'loess');
 
 %
-% plotting before and after denoising (optional)
+%% plotting before and after denoising (optional)
 figure
 hold on; grid on;set(gca,'fontsize',16)
 plot(t,ax_new,'Linewidth',2);
@@ -44,7 +44,7 @@ xlabel('Time, $t(s)$','interpreter','latex','fontsize',20)
 legend({'$a_z$ after ', '$a_z$ before'},'interpreter','latex','fontsize',20,'location','best')
 box on
 
-% overwriting the raw accelerations with the denoised ones (optional)
+%% overwriting the raw accelerations with the denoised ones (optional)
 
 ax = ax_new;
 ay = ay_new;
