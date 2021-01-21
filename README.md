@@ -8,7 +8,7 @@ The project has the following files:
 - `normEarth.m`: This file has a function that normalizes the rotated accelerations.
 - `plotting.m`: This file has plotting function that can be called. This function was made to reduce the repitions of the code.
 - `read_and_Preprocess.m`: This file has function `preprocess()`, that reads the raw linear acceleration and quaternion data. It rotates the linear acceleration to the reference frame by using the Euler angles computed from the quaternions.
-- `zuptPendulum.m`: This file is responsible from the drift elimination of the velocities and the displacements computed from the rotated linear accelerations.
+- `zuptPendulum.m`: This file is responsible for the drift elimination of the velocities and the displacements computed from the rotated linear accelerations.
 
 # Citation
 
