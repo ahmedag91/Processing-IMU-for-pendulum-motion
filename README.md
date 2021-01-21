@@ -16,7 +16,10 @@ If you find that this repository is useful for you research work, please cite th
 
 ```bash
 @article{Abdelgawwad_2020, 
-title={Modelling, Analysis, and Simulation of the Micro-Doppler Effect in Wideband Indoor Channels with Confirmation Through Pendulum Experiments}, 
+title={Modelling, Analysis, 
+and Simulation of the Micro-Doppler Effect 
+in Wideband Indoor Channels with 
+Confirmation Through Pendulum Experiments}, 
 volume={20},
 ISSN={1424-8220}, 
 url={http://dx.doi.org/10.3390/s20041049},
