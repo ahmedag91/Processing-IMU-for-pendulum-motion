@@ -14,7 +14,7 @@ The project has the following files:
 
 If you find that this repository is useful for you research work, please cite the following article:
 
-``bash
+```bash
 @article{Abdelgawwad_2020, 
 title={Modelling, Analysis, and Simulation of the Micro-Doppler Effect in Wideband Indoor Channels with Confirmation Through Pendulum Experiments}, 
 volume={20},
@@ -28,4 +28,4 @@ author={Abdelgawwad, Ahmed and Borhani, Alireza and P{\"}atzold, Matthias},
 year={2020}, 
 month={Feb},
 pages={1049}}
-``
+```
