@@ -9,3 +9,23 @@ The project has the following files:
 - `plotting.m`: This file has plotting function that can be called. This function was made to reduce the repitions of the code.
 - `read_and_Preprocess.m`: This file has function `preprocess()`, that reads the raw linear acceleration and quaternion data. It rotates the linear acceleration to the reference frame by using the Euler angles computed from the quaternions.
 - `zuptPendulum.m`: This file is responsible from the drift elimination of the velocities and the displacements computed from the rotated linear accelerations.
+
+# Citation
+
+If you find that this repository is useful for you research work, please cite the following article:
+
+```bash
+@article{Abdelgawwad_2020, 
+title={Modelling, Analysis, and Simulation of the Micro-Doppler Effect in Wideband Indoor Channels with Confirmation Through Pendulum Experiments}, 
+volume={20},
+ISSN={1424-8220}, 
+url={http://dx.doi.org/10.3390/s20041049},
+DOI={10.3390/s20041049}, 
+number={4}, 
+journal={Sensors},
+publisher={MDPI AG},
+author={Abdelgawwad, Ahmed and Borhani, Alireza and P{\"}atzold, Matthias}, 
+year={2020}, 
+month={Feb},
+pages={1049}}
+```
