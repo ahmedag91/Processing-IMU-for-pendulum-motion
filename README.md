@@ -8,12 +8,12 @@ This code is for reading and processing measured linear acceleration and quatern
 ## Description of the `m` files
 
 The project has the following files:
-- `main.m`: This is the main file to run
-- `cropData.m`: This file has MATLAB function that aims to crop the time series data.
-- `normEarth.m`: This file has a function that normalizes the rotated accelerations.
-- `plotting.m`: This file has plotting function that can be called. This function was made to reduce the repitions of the code.
-- `read_and_Preprocess.m`: This file has function `preprocess()`, that reads the raw linear acceleration and quaternion data. It rotates the linear acceleration to the reference frame by using the Euler angles computed from the quaternions.
-- `zuptPendulum.m`: This file is responsible for the drift elimination of the velocities and the displacements computed from the rotated linear accelerations. The algorithm implemented in this file is a modified version of the one available at this [link](https://github.com/xioTechnologies/Gait-Tracking-With-x-IMU/blob/master/Gait%20Tracking%20With%20x-IMU/Script.m) and this [video](https://www.youtube.com/watch?v=6ijArKE8vKU). Further explanation of the modified can be found at the results section of the paper below.
+- [`main.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/main.m): This is the main file to run
+- [`cropData.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/cropData.m): This file has MATLAB function that aims to crop the time series data.
+- [`normEarth.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/normEarth.m): This file has a function that normalizes the rotated accelerations.
+- [`plotting.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/plotting.m): This file has plotting function that can be called. This function was made to reduce the repitions of the code.
+- [`read_and_Preprocess.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/read_and_Preprocess.m): This file has function `preprocess()`, that reads the raw linear acceleration and quaternion data. It rotates the linear acceleration to the reference frame by using the Euler angles computed from the quaternions.
+- [`zuptPendulum.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/zuptPendulum.m): This file is responsible for the drift elimination of the velocities and the displacements computed from the rotated linear accelerations. The algorithm implemented in this file is a modified version of the one available at this [link](https://github.com/xioTechnologies/Gait-Tracking-With-x-IMU/blob/master/Gait%20Tracking%20With%20x-IMU/Script.m) and this [video](https://www.youtube.com/watch?v=6ijArKE8vKU). Further explanation of the modified can be found at the results section of the paper below.
 
 ## Citation
 
