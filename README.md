@@ -8,7 +8,7 @@ This code is for reading and processing measured linear acceleration and quatern
 ## Description of the `m` files
 
 The project has the following files:
-- [`main.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/main.m): This is the main file to run
+- [`main.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/main.m): This is the main file to run.
 - [`cropData.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/cropData.m): This file has MATLAB function that aims to crop the time series data.
 - [`normEarth.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/normEarth.m): This file has a function that normalizes the rotated accelerations.
 - [`plotting.m`](https://github.com/ahmedag91/Processing-IMU-for-pendulum-motion/blob/master/Process%20IMU/plotting.m): This file has plotting function that can be called. This function was made to reduce the repitions of the code.
